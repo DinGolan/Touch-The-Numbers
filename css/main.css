@@ -1,0 +1,199 @@
+/***************************/
+/* Exercise 2 - Touch Nums */
+/***************************/
+
+/* Reset and base */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+/* Header */
+.main-title {
+    color: #ffcc00;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* Container for timer and game */
+.game-container {
+    padding: 20px;
+}
+
+/* Top bar (Current Number , Time) */
+.top-bar {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    gap: 100px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+	opacity: 1;
+    padding: 0 10px;
+	transition: opacity 1s ease;
+    width: fit-content;
+}
+
+/* Smoothly fades the stats in when a new game starts */
+.top-bar.fade-in {
+    opacity: 1;
+}
+
+/* Smoothly fades the stats out before rebuilding it */
+.top-bar.fade-out {
+    opacity: 0;
+}
+
+/* Board styling */
+.board {
+	border-spacing: 10px;
+    margin: 0 auto;
+	opacity: 1;
+    transition: opacity 1s ease;
+}
+
+/* Smoothly fades the board in when a new game starts */
+.board.fade-in {
+    opacity: 1;
+}
+
+/* Smoothly fades the board out before rebuilding it */
+.board.fade-out {
+    opacity: 0;
+}
+
+/* Table cells */
+.cell {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Tabel cells */
+td.cell {
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900); /* default (active) */
+    color: black;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    height: 60px;
+    text-align: center;
+    transition: 0.2s;
+    vertical-align: middle;
+    width: 60px;
+}
+
+/* Inactive cells (already clicked or hidden) */
+.cell.inactive {
+    background: #333 !important;
+    color: #999;
+    cursor: default;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+    pointer-events: none;
+}
+
+/* Wrong cells */
+.cell.wrong {
+    background: red !important;
+    color: white !important;
+}
+
+/* Cell highlight on hover */
+.cell:hover {
+    opacity: 0.9;
+}
+
+/* Timer */
+.timer {
+    font-size: 18px;
+}
+
+/* Game Setup (Buttons) */
+.game-setup {
+    background-color: #222;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Container for a single radio button row with label and value aligned */
+.radio-option {
+    align-items: center;
+    color: white;
+    display: flex;
+    font-size: 16px;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+/* Styles the radio input for better visibility and UX */
+.radio-option input[type="radio"] {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* Holds both difficulty name and value in a space-between layout */
+.radio-label {
+    display: flex;
+    
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Displays the difficulty name aligned to the left */
+.diff-label {
+    text-align: left;
+}
+
+/* Aligns the numeric value (e.g. (25)) to the right in fixed width */
+.diff-value {
+    color: #ccc;
+    font-size: 14px;
+    min-width: 40px;
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Styles the "New Game" button with gradient and spacing */
+.new-game-btn {
+    background: linear-gradient(to bottom, #ffcc00, #ff9900);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+/* Container for top-bar item (current number / time) in vertical layout */
+.stat {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label under each stat item (e.g. "Current Number") with subtle color */
+.stat-label {
+    color: #ccc;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* Victory Message */
+.victory-msg {
+    color: #00ff88;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
