@@ -34,7 +34,7 @@ Simply open `index.html` in your browser to start playing.
 
 ---
 
-## 🙌 Contributing & Usage
+## 🙌 Contributing & Usage 🙌
 Feel free to fork the project, suggest improvements, or use it as a fun starter project to learn JavaScript !
 
 Ready ? Touch the numbers – and beat the clock ! ⏱️
